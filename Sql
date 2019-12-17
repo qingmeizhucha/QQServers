@@ -1,0 +1,75 @@
+/*
+ Navicat Premium Data Transfer
+
+ Source Server         : QQ
+ Source Server Type    : MySQL
+ Source Server Version : 50520
+ Source Host           : localhost:3306
+ Source Schema         : qqtalk
+
+ Target Server Type    : MySQL
+ Target Server Version : 50520
+ File Encoding         : 65001
+
+ Date: 27/08/2018 16:13:09
+*/
+
+SET NAMES utf8mb4;
+SET FOREIGN_KEY_CHECKS = 0;
+
+-- ----------------------------
+-- Table structure for fenzu
+-- ----------------------------
+DROP TABLE IF EXISTS `fenzu`;
+CREATE TABLE `fenzu`  (
+  `id` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of fenzu
+-- ----------------------------
+INSERT INTO `fenzu` VALUES ('398353879', '同学');
+INSERT INTO `fenzu` VALUES ('398353879', '硕大的多');
+
+-- ----------------------------
+-- Table structure for friend
+-- ----------------------------
+DROP TABLE IF EXISTS `friend`;
+CREATE TABLE `friend`  (
+  `myid` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL,
+  `friendid` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL,
+  `beizhu` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL,
+  `fenzuid` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of friend
+-- ----------------------------
+INSERT INTO `friend` VALUES ('398353879', '461565288', '33', '同学');
+
+-- ----------------------------
+-- Table structure for user
+-- ----------------------------
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE `user`  (
+  `id` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `password` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL,
+  `nickname` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL,
+  `sex` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL,
+  `birthday` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL,
+  `mytitle` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL,
+  `headicon` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL,
+  `realname` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL,
+  `tel` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of user
+-- ----------------------------
+INSERT INTO `user` VALUES ('10010', '123456', '超级无敌管理员', '位置', '位置', '你有我厉害么？', 'image//HeadImage.png', 'yhb', '110');
+INSERT INTO `user` VALUES ('398353879', '111', '111', '男', '1990-01-01', '111', 'image//HeadImage.png', '111', '111');
+INSERT INTO `user` VALUES ('461565288', '123', '12', '男', '1990-01-01', '123', 'image//HeadImage.png', '123', '123');
+
+SET FOREIGN_KEY_CHECKS = 1;
